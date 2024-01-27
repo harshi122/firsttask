@@ -1,1 +1,64 @@
+<style>
+    .one {
+        background-color: rgb(128, 128, 128, 0.2);
 
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .two {
+        background-color: white;
+        width: 300px;
+        height: 150px;
+        border-radius: 10px;
+        position: absolute;
+        left: 700px;
+        top: 500px;
+        bottom:10px;
+       
+    }
+    h1{
+        padding-left: 100px;
+        
+    }
+    input{
+        margin-left: 10px;
+        margin-top:20px;
+    }
+    button{
+        background-color: green;
+        color:white;
+        border:none;
+        padding:2px;
+    }
+    
+
+    
+</style>
+<div class="one">
+    <div class="two">
+        <h1>EqFtlz</h1>
+        <input type="text" id="box1">
+        <button onclick="check()">Verify</button>
+    </div>
+
+
+</div>
+
+<script>
+    
+    var h1element=document.querySelector("h1");
+
+    var inputValue=document.getElementById('myinput').value;
+    function check(){
+        if(h1element===inputValue){
+            alert("verified");
+        }
+        else{
+            alert("not verified");
+         }
+    }
+
+</script>
+ 
