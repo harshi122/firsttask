@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery_Image</title>
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Tailwind css link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .images:hover {
+            transform: scale(1.2);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .close-full {
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .close-button {
+            color: white;
+            z-index: 30;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="">
+
+        <div>
+            <h1 class="text-center text-3xl font-bold mt-3">Gallery Image</h1>
+        </div>
+
+        <!-- open image -->
+
+        <div class="grid grid-cols-3 gap-5 mt-8 m-2 md:m-10 " id="image-top">
+            <img src="./images/c1.jpg" alt="One" class="h-5/6 w-svw md:h-4/6 images" id="image-one">
+            <img src="./images/c2.jpg" alt="Two" class="h-5/6 w-svw md:h-4/6 images" id="image-two">
+            <img src="./images/c3.jpg" alt="Three" class="h-5/6 w-svw md:h-4/6 images" id="image-three">
+
+        </div>
+
+        <!-- hidden image popup-->
+
+        <div class="close-full hidden" id="">
+
+            <span class="float-right text-3xl cursor-pointer close-button mr-3" id="">x</span>
+            <br>
+            <img class="absolute m-5 md:ml-16" src="" id="zoom-img" alt="One" style="width: 90%;height: 90%;">
+
+        </div>
+
+
+
+        <script>
+
+            // top div images
+            var topImage = document.getElementById('image-top')
+            //image 1
+            var imgOne = document.getElementById('image-one')
+            // image 2
+            var imgTwo = document.getElementById('image-two')
+            // image 3
+            var imgThree = document.getElementById('image-three')
+            // button
+            var closeButton = document.querySelector('.close-button')
+            // close full div
+            var closeFull = document.querySelector('.close-full')
+            var zoomImage = document.getElementById("zoom-img")
+
+            imgOne.addEventListener('click', function () {
+
+
+                zoomImage.src = "./images/c1.jpg"
+
+
+                // var zoomImage=document.getElementById("zoom-img")
+                // zoomImage.setAttribute.src="./Images/img1.avif"
+                // imgOne=event.target
+                // console.log(event)
+                closeFull.style.display = 'block'
+
+                topImage.style.display = "none"
+
+            })
+
+            // image 2
+
+            imgTwo.addEventListener('click', function () {
+
+                zoomImage.src = "./images/c2.jpg"
+
+                closeFull.style.display = 'block'
+
+                topImage.style.display = "none"
+
+            })
+
+            //img 3
+            imgThree.addEventListener('click', function () {
+
+                zoomImage.src = "./images/c3.jpg"
+
+
+                closeFull.style.display = 'block'
+
+                topImage.style.display = "none"
+
+            })
+
+            //  closing popup
+            closeButton.addEventListener('click', function () {
+                closeFull.style.display = 'none'
+
+                topImage.style.display = "grid"
+            })
+        </script>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
